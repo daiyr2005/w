@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #CB11AB;
+  --primary-dark: #9e0d86;
+  --primary-light: #f5d6f0;
+
+  --accent: #FF6900;
+
+  --bg: #F6F6F7;
+  --surface: #FFFFFF;
+
+  --text: #1A1A1A;
+  --text-muted: #8A8A8A;
+
+  --border: #EAEAEA;
+
+  --success: #1DB854;
+  --error: #E53935;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.10);
+
+  --transition: 0.2s ease;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+  font-family: 'Unbounded', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* BUTTONS */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* SCROLLBAR (modern) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cfcfcf;
+}

@@ -1,0 +1,42 @@
+.product-grid-container {
+  padding: 20px 0;
+}
+
+.product-grid__meta {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.product-grid {
+  display: grid;
+  /* Адаптивная сетка: колонки будут подстраиваться под ширину экрана */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Центрируем состояние пустого списка */
+.product-grid__empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  width: 100%;
+}
+
+/* Планшеты (уменьшаем минимальную ширину карточки) */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+  }
+}
+
+/* Мобильные устройства (2 карточки в ряд) */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}

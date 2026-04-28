@@ -1,0 +1,183 @@
+.products-page {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* SIDEBAR */
+.products-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px solid var(--border);
+  position: sticky;
+  top: 80px;
+}
+
+.filter-block { 
+  margin-bottom: 24px; 
+  display: flex;          /* Добавлено */
+  flex-direction: column; /* Добавлено */
+  align-items: center;    /* Центрирует содержимое блока по горизонтали */
+}
+
+.filter-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: rebeccapurple;
+  font-family: 'Inter', sans-serif;
+  text-align: center;     /* Центрирует текст заголовка */
+}
+
+.filter-options { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+  width: 100%;            /* Чтобы hover эффект растягивался */
+  align-items: center;    /* Центрирует сами кнопки категорий */
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Центрирует текст внутри самой кнопки */
+  gap: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 6px 12px;      /* Немного увеличили отступы по бокам */
+  border-radius: 6px;
+  transition: background 0.15s;
+  color: var(--text);
+  width: fit-content;      /* Кнопка будет по размеру текста */
+  min-width: 120px;       /* Можно задать минимальную ширину для красоты */
+}
+
+.filter-option:hover, .filter-option.active { background: var(--primary-light); color: var(--primary); }
+
+.filter-option input { display: none; }
+
+.filter-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-price-input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.85rem;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s;
+  width: 0;
+}
+
+.filter-price-input:focus { border-color: var(--primary); }
+
+.filter-clear-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s;
+}
+
+.filter-clear-btn:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary); }
+
+/* MAIN AREA */
+.products-main { flex: 1; min-width: 0; }
+
+.products-top {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.products-search { flex: 1; }
+
+.products-search-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  background: var(--surface);
+  transition: border-color 0.2s;
+}
+
+.products-search-input:focus { border-color: var(--primary); }
+
+.products-sort {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  background: var(--surface);
+  outline: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.products-count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 2;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.page-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.page-dots { padding: 0 4px; color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .products-page { flex-direction: column; }
+  .products-sidebar { width: 100%; position: static; }
+}

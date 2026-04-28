@@ -1,0 +1,31 @@
+.fav-empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1rem;
+}
+
+.fav-login-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.fav-login-btn:hover { background: var(--primary-dark); }
+
+.fav-title { font-size: 1.5rem; margin-bottom: 24px; }
+.fav-title span { color: var(--text-muted); font-weight: 400; font-size: 1rem; }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}

@@ -1,0 +1,130 @@
+.product-card-wrapper {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  padding-bottom: 10px;
+}
+
+.product-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-card__img-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card-wrapper:hover .product-card__img {
+  transform: scale(1.05);
+}
+
+.product-card__badge {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  background: #f02d4c;
+  color: white;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 0 4px 4px 0;
+}
+
+.product-card__fav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.product-card__fav.active { opacity: 1; }
+
+.product-card__body {
+  padding: 10px 4px;
+}
+
+.product-card__prices {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.product-card__price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.product-card__old-price {
+  font-size: 13px;
+  text-decoration: line-through;
+  color: #a0a0a0;
+}
+
+.product-card__name {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.3;
+  margin: 4px 0;
+  
+  /* Исправленный блок обрезки текста */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Для Chrome, Safari, Edge */
+  line-clamp: 2;         /* Стандартное свойство */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.product-card__brand {
+  font-weight: 700;
+  color: #000;
+}
+
+.product-card__rating {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* КНОПКА В КОРЗИНУ */
+.product-card__add-btn {
+  width: calc(100% - 10px);
+  margin: 0 5px;
+  padding: 10px;
+  background: linear-gradient(90deg, #cb11ab 0%, #481173 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0; /* Скрыта */
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+}
+
+.product-card-wrapper:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.product-card-wrapper:hover .product-card__add-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
